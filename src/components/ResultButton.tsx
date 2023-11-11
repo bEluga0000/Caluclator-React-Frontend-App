@@ -13,21 +13,47 @@ export function ResultButton({ symbol, num1, num2, setPresentValue ,setTotalOper
         <Button variant="contained"
             onClick={() => {
                 if (symbol === "+") {
+                    if(!num1)
+                    {
+                        num1 = 0
+                    }
+                    if(!num2)
+                    {
+                        num2 = 0
+                    }
                     const result: number = add(num1, num2);
                     setPresentValue(result);
                     setTotalOperations(totalOperations+1)
                     setTotalValue(result+totalValue)
                 } else if (symbol === "-") {
+                    if (!num1) {
+                        num1 = 0
+                    }
+                    if (!num2) {
+                        num2 = 0
+                    }
                     const result: number = subtract(num1, num2);
                     setPresentValue(result);
                     setTotalOperations(totalOperations + 1)
                     setTotalValue(result + totalValue)
                 } else if (symbol === "*") {
+                    if (!num1) {
+                        num1 = 1
+                    }
+                    if (!num2) {
+                        num2 = 1
+                    }
                     const result: number = multiply(num1, num2);  
                     setPresentValue(result);
                     setTotalOperations(totalOperations + 1)
                     setTotalValue(result + totalValue)
                 } else if (symbol === "/") {
+                    if (!num1) {
+                        num1 = 0
+                    }
+                    if (!num2) {
+                        num2 = 0
+                    }
                     const result: number = divide(num1, num2);
                     setPresentValue(result);
                     setTotalOperations(totalOperations + 1)

@@ -4,6 +4,7 @@ import { InputsBoxes } from "./components/InputsBoxes"
 import { Results } from "./components/Results"
 import { Symbols } from "./components/Symbols"
 import { ResultButton } from "./components/ResultButton"
+import { Note } from "./components/Note"
 function App():JSX.Element {
   const[totalValue,setTotalValue] = useState(0)
   const[totalOperations,setTotalOperations] = useState(0)
@@ -24,8 +25,10 @@ function App():JSX.Element {
       setPresentValue(0);
       setTotalOperations(0)}}>Clear</Button>
       <ResultButton symbol={symbol} num1={num1} num2={num2} setPresentValue={setPresentValue} setTotalOperations={setTotalOperations} setTotalValue={setTotalValue} totalOperations={totalOperations} totalValue={totalValue}></ResultButton>
+      <Note/>
     </div>
   )
 }
 
 export default App
+// https://github.com/bEluga0000/Caluclator-React-Frontend-App.git
