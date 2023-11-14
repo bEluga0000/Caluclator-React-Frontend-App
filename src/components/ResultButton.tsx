@@ -1,18 +1,17 @@
 import { Button } from "@mui/material";
 import { useRecoilValue, useSetRecoilState } from "recoil";
-import { number1State, number2State } from "../Store/atom/numberState";
 import { resultState } from "../Store/atom/results";
 import { symbolState } from "../Store/atom/symbol";
+import { num1State } from "../Store/selectors/num1";
+import { num2State } from "../Store/selectors/num2";
 // import { symbolState } from "../Store/atom/symbol";
 import { totalOperatationState } from "../Store/selectors/totalOperatation";
 import { totalValueState } from "../Store/selectors/totalValue";
 
 
 export function ResultButton(): JSX.Element {
-    const num1 = useRecoilValue(number1State)
-    const num2 = useRecoilValue(number2State)
-    const setNum1 = useSetRecoilState(number1State)
-    const setNum2 = useSetRecoilState(number2State)
+    const num1 = useRecoilValue(num1State)
+    const num2 = useRecoilValue(num2State)
     const symbol = useRecoilValue(symbolState)
     const results = useSetRecoilState(resultState)
     const prevTotalValue = useRecoilValue(totalValueState)
@@ -29,12 +28,6 @@ export function ResultButton(): JSX.Element {
                     })
                 }
                  else if (symbol === "-") {
-                    if (!num1) {
-                        setNum1(0) 
-                    }
-                    if (!num2) {
-                        setNum2(0) 
-                    }
                     const result = subtract(num1, num2)
                     results({
                         presentValue: result,
@@ -43,12 +36,6 @@ export function ResultButton(): JSX.Element {
                     })
                 }
                  else if (symbol === "*") {
-                    if (!num1) {
-                        setNum1(1) 
-                    }
-                    if (!num2) {
-                        setNum2(1)
-                    }
                     const result = multiply(num1, num2)
                     results({
                         presentValue: result,
@@ -57,12 +44,6 @@ export function ResultButton(): JSX.Element {
                     })
                 }
                  else if (symbol === "/") {
-                    if (!num1) {
-                        setNum1(1) 
-                    }
-                    if (!num2) {
-                        setNum1(1) 
-                    }
                     const result =divide(num1,num2)
                     results({
                         presentValue: result,
@@ -77,18 +58,44 @@ export function ResultButton(): JSX.Element {
     );
 }
 
-function add(num1: number, num2: number) {
+function add(num1: number|null, num2: number|null) {
+    if(num1 === null)
+    {
+        num1 = 0
+    }
+    if(num2 === null)
+    {
+        num2 =0
+    }
     return num1 + num2;
 }
 
-function subtract(num1: number, num2: number) {
+function subtract(num1: number|null, num2: number|null) {
+    if (num1 === null) {
+        num1 = 0
+    }
+    if (num2 === null) {
+        num2 = 0
+    }
     return num1 - num2;
 }
 
-function multiply(num1: number, num2: number) {
+function multiply(num1: number|null, num2: number|null) {
+    if (num1 === null) {
+        num1 = 1
+    }
+    if (num2 === null) {
+        num2 = 1
+    }
     return num1 * num2;
 }
 
-function divide(num1: number, num2: number) {
+function divide(num1: number|null, num2: number|null) {
+    if (num1 === null) {
+        num1 = 1
+    }
+    if (num2 === null) {
+        num2 = 1
+    }
     return num1 / num2;
 }
