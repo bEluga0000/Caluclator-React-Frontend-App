@@ -1,8 +1,14 @@
 import { Typography } from "@mui/material";
-import { useResult } from "../ContextApi/resultContext";
+import { useRecoilValue } from "recoil";
+import { presentValueSate } from "../Store/selectors/prsentValue";
+import { totalOperatationState } from "../Store/selectors/totalOperatation";
+import { totalValueState } from "../Store/selectors/totalValue";
 
 export function ShowResults(){
-    const {presentValue,totalValue,totalOperation} = useResult()
+    
+    const presentValue = useRecoilValue(presentValueSate)
+    const totalValue = useRecoilValue(totalValueState)
+    const totalOperation = useRecoilValue(totalOperatationState)
     return(
         <div style={{ color: 'white' }}>
             <Typography variant="subtitle1" style={{ display: 'inline' }}> Present Value:&nbsp;<Typography variant="h5" style={{ display: 'inline' }}>{presentValue}</Typography></Typography>
