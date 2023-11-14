@@ -7,7 +7,7 @@ type SetNum2 = Dispatch<SetStateAction<Num2State>>;
 
 export function InputsBoxes({symbol,setNum1,setNum2}:{symbol:string,setNum1:SetNum1,setNum2:SetNum2}) {
     return (
-        <div style={{display:'flex',gap:'1rem',flexWrap:'wrap'}}>
+        <div style={{display:'flex',gap:'.5rem'}}>
             <TextField id="outlined-basic" label="Number 1" variant="outlined" type={'number'}
                 placeholder='Enter Number'
                 style={{ backgroundColor: '#eee', borderRadius: '5px' }}

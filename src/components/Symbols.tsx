@@ -8,14 +8,14 @@ interface ChildComponentProps {
 export function Symbols({ setSymbol }: ChildComponentProps)
 {
     return(
-        <div>
-            <Button style={{ backgroundColor: '#F4CE14', color: 'black', fontSize: '1', fontWeight: '600', borderRadius: '35px' }}
+        <div style={{ display: 'flex', gap: '2rem' }}>
+            <Button style={{ backgroundColor: '#F4CE14', color: 'black', fontSize: '1.2rem', fontWeight: '600', borderRadius: '35px' }}
                 onClick={() => { setSymbol("+") }}>+</Button>
-            <Button style={{ backgroundColor: '#F4CE14', color: 'black', fontSize: '1', fontWeight: '600', borderRadius: '35px' }}
+            <Button style={{ backgroundColor: '#F4CE14', color: 'black', fontSize: '1.2rem', fontWeight: '600', borderRadius: '35px' }}
             onClick={()=>{setSymbol("-")}}>-</Button>
-            <Button style={{ backgroundColor: '#F4CE14', color: 'black', fontSize: '1', fontWeight: '600', borderRadius: '35px' }}
+            <Button style={{ backgroundColor: '#F4CE14', color: 'black', fontSize: '1.2rem', fontWeight: '600', borderRadius: '35px' }}
                 onClick={() => { setSymbol("*") }}>*</Button>
-            <Button style={{ backgroundColor: '#F4CE14', color: 'black', fontSize: '1', fontWeight: '600', borderRadius: '35px' }}
+            <Button style={{ backgroundColor: '#F4CE14', color: 'black', fontSize: '1.2rem', fontWeight: '600', borderRadius: '35px' }}
                 onClick={() => { setSymbol("/") }}>/</Button>
         </div>
     )
