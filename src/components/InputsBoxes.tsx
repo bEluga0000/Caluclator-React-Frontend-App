@@ -8,7 +8,7 @@ export function InputsBoxes() {
     const setNum2 = useSetRecoilState(number2State)
     
     return (
-        <div style={{display:'flex',gap:'1rem',flexWrap:'wrap'}}>
+        <div style={{display:'flex',gap:'1rem'}}>
             <TextField id="outlined-basic" label="Number 1" variant="outlined" type={'number'}
                 placeholder='Enter Number'
                 style={{ backgroundColor: '#eee', borderRadius: '5px' }}

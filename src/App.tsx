@@ -1,21 +1,20 @@
 import { InputsBoxes } from "./components/InputsBoxes"
 import { Symbols } from "./components/Symbols"
-import { ResultButton } from "./components/ResultButton"
 import { Note } from "./components/Note"
 import { ShowResults } from "./components/ShowResults"
-import { ClearButton } from "./components/ClearButton"
 import { RecoilRoot } from "recoil"
+import "./App.css"
+import { MainButtons } from "./components/MainButtons"
 
 
 function App(): JSX.Element {
   return (
     <RecoilRoot>
-        <div>
+        <div className="App">
           <InputsBoxes />
           <Symbols />
           <ShowResults />
-          <ResultButton></ResultButton>
-          <ClearButton />
+          <MainButtons/>
           <Note />
         </div>
     </RecoilRoot>

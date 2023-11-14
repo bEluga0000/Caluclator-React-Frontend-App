@@ -7,14 +7,14 @@ export function Symbols()
 {
     const setSymbol = useSetRecoilState(symbolState)
     return(
-        <div>
-            <Button style={{ backgroundColor: '#F4CE14', color: 'black', fontSize: '1', fontWeight: '600', borderRadius: '35px' }}
+        <div style={{display:'flex',gap:'2rem'}}>
+            <Button style={{ backgroundColor: '#F4CE14', color: 'black', fontSize: '1.2rem', fontWeight: '600', borderRadius: '50rem' }}
                 onClick={() => { setSymbol("+") }}>+</Button>
-            <Button style={{ backgroundColor: '#F4CE14', color: 'black', fontSize: '1', fontWeight: '600', borderRadius: '35px' }}
+            <Button style={{ backgroundColor: '#F4CE14', color: 'black', fontSize: '1.2rem', fontWeight: '600', borderRadius: '50rem' }}
             onClick={()=>{setSymbol("-")}}>-</Button>
-            <Button style={{ backgroundColor: '#F4CE14', color: 'black', fontSize: '1', fontWeight: '600', borderRadius: '35px' }}
+            <Button style={{ backgroundColor: '#F4CE14', color: 'black', fontSize: '1.2rem', fontWeight: '600', borderRadius: '50rem' }}
                 onClick={() => { setSymbol("*") }}>*</Button>
-            <Button style={{ backgroundColor: '#F4CE14', color: 'black', fontSize: '1', fontWeight: '600', borderRadius: '35px' }}
+            <Button style={{ backgroundColor: '#F4CE14', color: 'black', fontSize: '1.2rem', fontWeight: '600', borderRadius: '50rem' }}
                 onClick={() => { setSymbol("/") }}>/</Button>
         </div>
     )

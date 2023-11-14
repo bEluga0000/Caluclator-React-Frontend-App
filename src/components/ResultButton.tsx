@@ -21,14 +21,6 @@ export function ResultButton(): JSX.Element {
         <Button variant="contained"
             onClick={() => {
                 if (symbol === "+") {
-                    if(!num1)
-                    {
-                        setNum1(0) 
-                    }
-                    if(!num2)
-                    {
-                        setNum2 (0) 
-                    }
                     const result = add(num1,num2)
                     results({
                         presentValue:result,

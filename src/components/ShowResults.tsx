@@ -10,7 +10,7 @@ export function ShowResults(){
     const totalValue = useRecoilValue(totalValueState)
     const totalOperation = useRecoilValue(totalOperatationState)
     return(
-        <div style={{ color: 'white' }}>
+        <div style={{ color: 'white' ,display:'flex',gap:'1rem'}}>
             <Typography variant="subtitle1" style={{ display: 'inline' }}> Present Value:&nbsp;<Typography variant="h5" style={{ display: 'inline' }}>{presentValue}</Typography></Typography>
             <br/>
             <Typography variant="subtitle1" style={{ display: 'inline' }}> Total Value: &nbsp;<Typography variant="h5" style={{ display: 'inline' }}>{totalValue}</Typography></Typography>
